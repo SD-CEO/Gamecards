@@ -15,12 +15,12 @@ class DeckOfCards:  # make a new deck_cards
                 card = Card(i, z)
                 self.lst_cards += [card]
 
-    def shuffle(self):
+    def shuffle(self): #shuffles the deck
         shuffle(self.lst_cards)
         return self.lst_cards
 
-    def deal_one(self, k=1):
+    def deal_one(self, k=1): #deasl one random card from the deck
         return sample(self.lst_cards, k)
 
-    def show(self):
+    def show(self): #show cards
         return self.lst_cards
