@@ -6,18 +6,21 @@ from random import *
 class Player:
     def __init__(self, name):  # k = Defult num cards of deck
         self.name = name
-        deck = DeckOfCards()
-        self.deck = deck.lst_cards
+        self.deck = DeckOfCards()
+        self.deck_full = self.deck.lst_cards
         self.hand = []
+        self.card_name = ""
 
     def set_hand(self, number_cards=10):  # deals a random set of hand to the player. defult 10 cards
         for i in range(number_cards):
-            self.hand.append(choice(self.deck))
+            self.hand.append(self.deck.lst_cards[randint(0, 51)])
         return self.hand
 
     def get_card(self):  # takes a random card from the player's hand
-        x = self.hand.pop()
-        return self.deck.index(x)
+        x = self.deck.deal_one()
+        self.card_name = x
+        return self.deck.lst_cards.index(x)
+
 
     def add_card(self, card1):  # gets a card and adds it to the player's hand
         self.hand.append(card1)

@@ -20,8 +20,8 @@ class DeckOfCards:  # make a new deck_cards sort by volume!, The volume card is 
         self.lst_cards
         return self.lst_cards
 
-    def deal_one(self, k=1): #deasl one random card from the deck
-        return sample(self.lst_cards, k)
+    def deal_one(self): #deasl one random card from the deck
+        return choice(self.lst_cards)
 
     def show(self): #show cards
         return self.lst_cards

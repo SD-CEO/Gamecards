@@ -6,16 +6,15 @@ from random import *
 
 class CardGame:
     def __init__(self, number_cards=10):  # creates a new deck
-        game_deck = DeckOfCards()
+        self.game_deck = DeckOfCards()
         self.player_1 = Player("Dolev")
         self.player_2 = Player("Shay")
-        self.game_deck = game_deck.lst_cards
         self.number_cards = number_cards
         self.new_game()
 
     def new_game(self):  # shuffels the deck and deals each player the number of decided cards
-        self.player_1.set_hand()
-        self.player_2.set_hand()
+        self.player_1.set_hand(self.number_cards)
+        self.player_2.set_hand(self.number_cards)
 
 
     def get_winner(self):  # prints the player with the least card. if equal,gives None

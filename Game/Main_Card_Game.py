@@ -4,18 +4,24 @@ from Game.Player import Player
 from Game.CardGame import CardGame
 
 print("starting game")
-game = CardGame()
+game = CardGame()  # start a game with default 10 cards per player
 print(game.player_1.show())
 print(game.player_2.show())
-for i in game.player_1.hand:
-    while i in game.player_2.hand:
-        game.player_2.hand.remove(i)
-        game.player_2.hand.append(game.player_2.set_hand(1))
+
+for i in range(8):
+    card_1 = game.player_1.get_card()
+    card_2 = game.player_2.get_card()
+    # print(game.game_deck)
+    print(f"{game.player_1.name}----{game.player_1.card_name}\n{game.player_2.name}----{game.player_2.card_name} ")
+    if card_1 > card_2:
+        print(f"{game.player_1.name} won this round!")
+        game.player_1.add_card(game.player_2.card_name)
+        game.player_1.add_card(game.player_1.card_name)
+        continue
+    if card_2 > card_1:
+        print(f"{game.player_2.name} won this round!")
+        game.player_2.add_card(game.player_1.card_name)
+        game.player_2.add_card(game.player_2.card_name)
+        continue
 
 
-card_1 = game.player_1.get_card()
-card_2 = game.player_2.get_card()
-print(card_1)
-print(card_2)
-# print(game.game_deck.index(card_1))
-# # print(game.game_deck.index(card_2))
