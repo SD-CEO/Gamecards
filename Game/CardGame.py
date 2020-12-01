@@ -11,6 +11,7 @@ class CardGame:
         self.player_2 = Player("Shay")
         self.number_cards = number_cards
         self.new_game()
+        self.shuf = []
 
     def new_game(self):  # shuffels the deck and deals each player the number of decided cards
         self.player_1.set_hand(self.number_cards)

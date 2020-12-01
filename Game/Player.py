@@ -13,7 +13,7 @@ class Player:
 
     def set_hand(self, number_cards=10):  # deals a random set of hand to the player. defult 10 cards
         for i in range(number_cards):
-            self.hand.append(self.deck.lst_cards[randint(0, 51)])
+            self.hand.append(self.deck_full.pop(randint(0, len(self.deck_full))))
         return self.hand
 
     def get_card(self):  # takes a random card from the player's hand

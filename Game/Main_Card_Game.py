@@ -1,14 +1,18 @@
 from Game.Card import Card
 from Game.DeckOfCards import DeckOfCards
 from Game.Player import Player
+from random import *
 from Game.CardGame import CardGame
 
 print("starting game")
 game = CardGame()  # start a game with default 10 cards per player
 print(game.player_1.show())
 print(game.player_2.show())
-
-for i in range(8):
+for i in game.player_1.hand:
+    if i in game.player_2.hand:
+        game.player_1.hand.remove(i)
+        game.player_1.add_card(choice(game.player_1.deck_full))
+for i in range(10):
     card_1 = game.player_1.get_card()
     card_2 = game.player_2.get_card()
     # print(game.game_deck)

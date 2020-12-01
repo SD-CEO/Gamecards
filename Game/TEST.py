@@ -14,5 +14,6 @@ from random import *
 # b = CardGame()
 # print(b.new_game())
 lst = [1,2,3]
-lst.
+[x] = shuffle(lst)
+print(x)
 

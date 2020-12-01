@@ -15,13 +15,12 @@ class DeckOfCards:  # make a new deck_cards sort by volume!, The volume card is 
                 card = Card(i, z)
                 self.lst_cards += [card]
 
+    def shuffle(self):  # shuffles the deck
+        x = sample(self.lst_cards, 51)
+        return x
 
-    def shuffle(self): #shuffles the deck
-        self.lst_cards
-        return self.lst_cards
-
-    def deal_one(self): #deasl one random card from the deck
+    def deal_one(self):  # deasl one random card from the deck
         return choice(self.lst_cards)
 
-    def show(self): #show cards
+    def show(self):  # show cards
         return self.lst_cards
