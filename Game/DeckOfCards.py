@@ -5,7 +5,7 @@ from random import *
 # from random import randint
 
 
-class DeckOfCards:  # make a new deck_cards
+class DeckOfCards:  # make a new deck_cards sort by volume!, The volume card is the index num of the card
     def __init__(self):
         self.level_suit = ["Diamond", "Spade", "Heart", "Club"]
         self.level_value = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
@@ -15,8 +15,9 @@ class DeckOfCards:  # make a new deck_cards
                 card = Card(i, z)
                 self.lst_cards += [card]
 
+
     def shuffle(self): #shuffles the deck
-        shuffle(self.lst_cards)
+        self.lst_cards
         return self.lst_cards
 
     def deal_one(self, k=1): #deasl one random card from the deck

@@ -9,10 +9,10 @@ from random import *
 # print(full.shuffle())
 # print(full.deal_one())
 # print(full.show())
-
-a = Player('dolev')
-b = CardGame()
-print(b.new_game())
-
-
+#
+# a = Player('dolev')
+# b = CardGame()
+# print(b.new_game())
+lst = [1,2,3]
+lst.
 

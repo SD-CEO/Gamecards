@@ -14,9 +14,9 @@ class CardGame:
         self.new_game()
 
     def new_game(self):  # shuffels the deck and deals each player the number of decided cards
-        shuffle(self.game_deck)
         self.player_1.set_hand()
         self.player_2.set_hand()
+
 
     def get_winner(self):  # prints the player with the least card. if equal,gives None
         if len(self.player_1.hand) > len(self.player_2.hand):
