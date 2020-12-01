@@ -16,8 +16,8 @@ class DeckOfCards:  # make a new deck_cards
                 self.lst_cards += [card]
 
     def shuffle(self): #shuffles the deck
-        shuffle(self.lst_cards)
-        return self.lst_cards
+        g = shuffle(self.lst_cards)
+        return g
 
     def deal_one(self, k=1): #deasl one random card from the deck
         return sample(self.lst_cards, k)

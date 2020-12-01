@@ -8,16 +8,17 @@ class Player:
         self.name = name
         deck = DeckOfCards()
         self.deck = deck.lst_cards
+        self.card = ""
 
     def set_hand(self, number_cards=10):  # deals a random set of hand to the player. defult 10 cards
-        shuffle(self.deck)
         self.hand = sample(self.deck, number_cards)
         return self.hand
 
     def get_card(self):  # takes a random card from the player's hand
-        [x] = sample(self.hand, 1)
+        x = self.hand[randint(0, len(self.hand)-1)]
         self.hand.remove(x)
-        return x
+        self.card = x
+        return self.deck.index(self.card)
 
     def add_card(self, card1):  # gets a card and adds it to the player's hand
         self.hand.append(card1)

@@ -7,17 +7,22 @@ print("starting game")
 game = CardGame()
 print(game.player_1.show())
 print(game.player_2.show())
+#
+card1 = game.player_1.get_card()
+card2 = game.player_2.get_card()
+print(game.player_1.card)
+print("VS")
+print(game.player_2.card)
 
-for i in range(1):
-    print(f"{game.player_1.name}: {game.player_1.get_card()} -- {game.player_2.get_card()} :{game.player_2.name}")
-    card_1 = game.player_1.get_card()
-    card_2 = game.player_2.get_card()
-    if game.game_deck.index(card_1) > game.game_deck.index(card_2):
-        game.player_2.add_card(card_1)
-        game.player_2.add_card(card_2)
-        print(f"{game.player_2.name} was won that round")
+if card1 > card2:
+    print(True)
+print(game.game_deck)
 
-    if game.game_deck.index(card_1) < game.game_deck.index(card_2):
-        game.player_1.add_card(card_1)
-        game.player_1.add_card(card_2)
-        print(f"{game.player_1.name} was won that round")
+
+
+
+
+
+
+
+
